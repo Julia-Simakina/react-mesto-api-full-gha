@@ -1,0 +1,14 @@
+.auth__form-submit {
+  width: 358px;
+  min-height: 50px;
+  font-weight: 400;
+  border: 0;
+  border-radius: 2px;
+  font-size: 18px;
+  text-align: center;
+  color: #000;
+  margin-top: 216px;
+}
+.auth__form-submit:hover {
+  cursor: pointer;
+}

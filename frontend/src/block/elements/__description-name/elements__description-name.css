@@ -1,0 +1,10 @@
+.elements__description-name {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  max-width: calc(100% - 42px);
+  color: #000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

@@ -1,0 +1,13 @@
+.elements__description-like {
+  background: url(../../../image/like.svg);
+  width: 22px;
+  height: 19px;
+  background-repeat: no-repeat;
+  border: 0;
+  transition: 0.2s ease-in;
+}
+
+.elements__description-like:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

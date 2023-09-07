@@ -1,0 +1,7 @@
+.elements__description-like_active {
+  background: url(../../../../image/like-active.svg);
+  width: 22px;
+  height: 19px;
+  background-repeat: no-repeat;
+  border: 0;
+}

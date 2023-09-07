@@ -1,0 +1,9 @@
+.popup__massage {
+  max-width: 358px;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
+  text-align: center;
+  margin: 0;
+  padding: 32px;
+}

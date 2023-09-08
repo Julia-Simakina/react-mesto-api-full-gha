@@ -84,7 +84,7 @@ class Api {
 }
 
 export const api = new Api({
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://api.mesto.julias.nomoredomainsicu.ru',
   headers: {
   //   authorization: '88a0905a-02f1-4cce-a559-1e982b5f7199',
  'Content-Type': 'application/json'

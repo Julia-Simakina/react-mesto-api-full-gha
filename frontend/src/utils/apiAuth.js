@@ -4,7 +4,7 @@ function getResponseData(res) {
   }
   return res.json();
 }
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://api.mesto.julias.nomoredomainsicu.ru';
 
 const register = (email, password) => {
   return fetch(`${BASE_URL}/signup`, {

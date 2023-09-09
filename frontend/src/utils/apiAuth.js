@@ -5,8 +5,10 @@ function getResponseData(res) {
   return res.json();
 }
 
+const REACT_BASE_URL = "https://api.mesto.julias.nomoredomainsicu.ru";
+
 const register = (email, password) => {
-  return fetch(`${process.env.REACT_BASE_URL}/signup`, {
+  return fetch(`${REACT_BASE_URL}/signup`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password })
@@ -14,7 +16,7 @@ const register = (email, password) => {
 };
 
 const login = (email, password) => {
-  return fetch(`${process.env.REACT_BASE_URL}/signin`, {
+  return fetch(`${REACT_BASE_URL}/signin`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password })
@@ -22,7 +24,7 @@ const login = (email, password) => {
 };
 
 const checkToken = token => {
-  return fetch(`${process.env.REACT_BASE_URL}/users/me`, {
+  return fetch(`${REACT_BASE_URL}/users/me`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

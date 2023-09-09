@@ -83,8 +83,10 @@ class Api {
   }
 }
 
+const REACT_BASE_URL = "https://api.mesto.julias.nomoredomainsicu.ru";
+
 export const api = new Api({
-  baseUrl: process.env.REACT_BASE_URL,
+  baseUrl: REACT_BASE_URL,
   headers: {
   //   authorization: '88a0905a-02f1-4cce-a559-1e982b5f7199',
  'Content-Type': 'application/json'

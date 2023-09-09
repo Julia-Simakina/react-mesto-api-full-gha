@@ -1,5 +1,4 @@
 const { SECRET_KEY_JWT } = process.env;
-console.log(SECRET_KEY_JWT);
 const jwt = require('jsonwebtoken');
 const AuthError = require('../errors/AuthError');
 

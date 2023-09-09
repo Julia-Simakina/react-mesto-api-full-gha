@@ -33,6 +33,12 @@ app.use(bodyParser.urlencoded({ extended: true })); // для приёма ве�
 
 app.use(requestLogger);
 
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 app.post('/signup', signUp, createUser);
 app.post('/signin', signIn, login);
 

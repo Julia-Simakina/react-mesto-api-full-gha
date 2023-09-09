@@ -1,12 +1,10 @@
-// const mongoose = require('mongoose');
+const { SECRET_KEY_JWT } = process.env;
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const ConflictError = require('../errors/ConflictError');
 const BadRequestError = require('../errors/BadRequestError');
 const NotFoundError = require('../errors/NotFoundError');
-
-const { SECRET_KEY_JWT } = process.env;
 
 module.exports.getAllUsers = (req, res) => {
   User.find({})
@@ -134,7 +132,6 @@ module.exports.login = (req, res, next) => {
     .then((user) => {
       // создадим токен
       const token = jwt.sign({ _id: user._id }, SECRET_KEY_JWT, { expiresIn: '7d' });
-
       // вернём токен
       res.send({ token });
     })

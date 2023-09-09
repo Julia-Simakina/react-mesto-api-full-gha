@@ -133,7 +133,7 @@ module.exports.login = (req, res, next) => {
       // создадим токен
       const token = jwt.sign({ _id: user._id }, SECRET_KEY_JWT, { expiresIn: '7d' });
       // вернём токен
-      res.send({ token });
+      res.status(200).send({ token });
     })
     .catch((err) => {
       next(err);

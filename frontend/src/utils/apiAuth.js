@@ -18,8 +18,7 @@ const register = (email, password) => {
 const login = (email, password) => {
   return fetch(`${REACT_BASE_URL}/signin`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*' },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password })
   }).then(res => getResponseData(res));
 };

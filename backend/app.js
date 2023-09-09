@@ -2,8 +2,10 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const helmet = require('helmet');
 const { errors } = require('celebrate');
 const cors = require('cors');
+const { limiter } = require('./constants/rateLimit');
 const { createUser, login } = require('./controllers/users');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
@@ -27,6 +29,9 @@ mongoose.connect(DB_URL, {
 const app = express();
 
 app.use(cors());
+
+app.use(helmet());
+app.use(limiter);
 
 app.use(bodyParser.json()); // для собирания JSON-формата
 app.use(bodyParser.urlencoded({ extended: true })); // для приёма веб-страниц внутри POST-запроса

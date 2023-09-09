@@ -1,4 +1,4 @@
-const { SECRET_KEY_JWT } = process.env;
+const { SECRET_KEY_JWT = 'mesto-secret' } = process.env;
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');

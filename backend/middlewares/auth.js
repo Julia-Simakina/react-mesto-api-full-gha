@@ -1,4 +1,4 @@
-const { SECRET_KEY_JWT } = process.env;
+const { SECRET_KEY_JWT = 'mesto-secret' } = process.env;
 const jwt = require('jsonwebtoken');
 const AuthError = require('../errors/AuthError');
 

@@ -35,15 +35,18 @@ function App() {
   const [deletedCard, setDeletedCard] = useState({})
 
   React.useEffect(() => {
+    if(isLoggedIn){
     api
       .getProfile()
       .then(profileInfo => {
         setCurrentUser(profileInfo);
       })
       .catch(err => console.log(err));
-  }, []);
+    }
+  }, [isLoggedIn]);
 
   React.useEffect(() => {
+    if(isLoggedIn){
     api
       .getInitialCards()
       .then(data => {
@@ -52,7 +55,8 @@ function App() {
       .catch(err => {
         console.log(`Ошибка: ${err}`);
       });
-  }, []);
+    }
+  }, [isLoggedIn]);
 
   function handleCardLike(card) {
     // Проверяем, есть ли уже лайк на этой карточке
@@ -149,6 +153,7 @@ function App() {
         navigate('/');
       })
       .catch(err => {
+        setIsRegistrationValid(false);
         console.log(`Ошибка: ${err}`);
         setInfoToolTipPopupOpen(true);
       });

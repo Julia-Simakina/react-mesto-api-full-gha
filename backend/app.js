@@ -2,7 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-// const helmet = require('helmet');
+
+const helmet = require('helmet');
 const { errors } = require('celebrate');
 const cors = require('cors');
 const { limiter } = require('./constants/rateLimit');
@@ -24,7 +25,7 @@ const app = express();
 
 app.use(cors());
 
-// app.use(helmet());
+app.use(helmet());
 app.use(limiter);
 
 app.use(bodyParser.json()); // для собирания JSON-формата
